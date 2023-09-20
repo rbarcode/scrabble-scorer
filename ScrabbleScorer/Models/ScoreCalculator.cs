@@ -22,15 +22,17 @@ namespace ScrabbleScorer.Models
       { 'Q', 10 }, { 'Z', 10 }
     };
 
-    public static char[] WordToCharArray(string userInput)
+    public static int Score { get; set; }
+
+    public static void WordToCharArray(string userInput)
     {
       char[] _word = userInput.ToUpper().ToCharArray();
-      return _word;
+      CalcScore(_word);
     }
 
-    public static int CalcScore(char[] wordArray)
+    public static void CalcScore(char[] wordArray)
     {
-      int scoreKeeper = 0;
+      Score = 0;
       for (int index = 0; index < wordArray.Length; index++)
       {
         for (int key = 0; key < letterValues.Count; key++)
@@ -38,11 +40,10 @@ namespace ScrabbleScorer.Models
           KeyValuePair<char, int> v = letterValues.ElementAt(key);
           if (wordArray[index] == v.Key)
           {
-            scoreKeeper += v.Value;
+            Score += v.Value;
           }
         }
       }
-      return scoreKeeper;
     }
   }
 }

@@ -11,8 +11,8 @@ namespace ScrabbleScorer
 
       Console.WriteLine("Enter a word to check it's score using ScrabbleScorer");
       string userInput = Console.ReadLine();
-      char[] wordArray = ScoreCalculator.WordToCharArray(userInput);
-      int result = ScoreCalculator.CalcScore(wordArray);
+      ScoreCalculator.WordToCharArray(userInput);
+      int result = ScoreCalculator.Score;
 
       Console.WriteLine($"The score of {userInput} is : {result}");
 
