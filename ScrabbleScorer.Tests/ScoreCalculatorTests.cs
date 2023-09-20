@@ -20,5 +20,13 @@ namespace ScrabbleScorer.Tests
       // Assert
       CollectionAssert.AreEqual(testArray, output);
     }
+    
+    [TestMethod]
+    public void CalcScore_CalcScoreFromWordArray_Int()
+    {
+      char[] wordArray = { 'a', 'p', 'p', 'l', 'e' };
+      int pointsResult = ScoreCalculator.CalcScore(wordArray);
+      Assert.AreEqual( 9, pointsResult);
+    }
   }
 }
