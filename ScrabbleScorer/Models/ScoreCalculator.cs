@@ -24,11 +24,7 @@ namespace ScrabbleScorer.Models
 
     public static char[] WordToCharArray(string userInput)
     {
-      // string userInput = "apple";
       char[] _word = userInput.ToUpper().ToCharArray();
-      // char[] _word = { 'A', 'P', 'P', 'L', 'E' };
-      CalcScore(_word);
-      // int resultOfPointTallying = CalcScore(_word);
       return _word;
     }
 
