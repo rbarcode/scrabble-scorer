@@ -16,17 +16,25 @@ namespace ScrabbleScorer.Tests
       string userInput = "apple";
       // Act
       char[] output = ScoreCalculator.WordToCharArray(userInput);
-      char[] testArray = { 'a', 'p', 'p', 'l', 'e' };
+      char[] testArray = { 'A', 'P', 'P', 'L', 'E' };
       // Assert
       CollectionAssert.AreEqual(testArray, output);
     }
-    
+
     [TestMethod]
     public void CalcScore_CalcScoreFromWordArray_Int()
     {
-      char[] wordArray = { 'a', 'p', 'p', 'l', 'e' };
+      char[] wordArray = { 'A', 'P', 'P', 'L', 'E' };
       int pointsResult = ScoreCalculator.CalcScore(wordArray);
-      Assert.AreEqual( 9, pointsResult);
+      Assert.AreEqual(9, pointsResult);
+    }
+
+    [TestMethod]
+    public void CalcScore_CalcScoreFromWordArray2_Int()
+    {
+      char[] wordArray = { 'Z', 'E', 'B', 'R', 'A' };
+      int pointsResult = ScoreCalculator.CalcScore(wordArray);
+      Assert.AreEqual(16, pointsResult);
     }
   }
 }
